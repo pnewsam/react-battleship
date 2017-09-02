@@ -14,7 +14,7 @@ class Game extends Component {
   }
 
   componentDidMount() {
-    this.placeShips();    
+    this.placeShips();
   }
 
   newBoard() {
@@ -22,7 +22,7 @@ class Game extends Component {
     for (let r = 0; r < 16; r++) {
       let row = []
       for (let c = 0; c < 16; c++) {
-        row.push('-');
+        row.push(null);
       }
       b.push(row);
     }
@@ -30,7 +30,14 @@ class Game extends Component {
   }
 
   placeShips() {
-    var ships = [{sym: 'A', length: 5}, {sym: 'B', length: 4}, {sym: 'S', length: 3}, {sym: 'D', length: 3}, {sym: 'C', length: 3}, {sym: 'P', length: 2}];
+    var ships = [
+      {sym: 'A', length: 5},
+      {sym: 'B', length: 4},
+      {sym: 'S', length: 3},
+      {sym: 'D', length: 3},
+      {sym: 'C', length: 3},
+      {sym: 'P', length: 2} ];
+    
     for (let i = 0; i < 5; i++) {
       let s = ships.splice(rand(ships.length), 1)[0];
       this.placeShip(s);
@@ -54,8 +61,6 @@ class Game extends Component {
     }
   }
 
-
-
   writeShip(coords, ship, dir) {
     let b = this.state.board;
     for (let i = 0; i < ship.length; i++) {
@@ -71,22 +76,32 @@ class Game extends Component {
   }
 
   isPlaceable(coords, ship, dir) {
-    switch(dir) {
-      case 'hor':
-        if (coords.col + ship.length < 16) {
-          return true;
-        } else {
-          return false;
-        }
-      case 'ver':
-        if (coords.row + ship.length < 16) {
-          return true;
-        } else {
-          return false;
-        }
-      default:
-        break;
+    if (dir === 'hor') {
+      if (coords.col + ship.length < 16 && this.isVacantH(coords, ship)) {
+        return true;
+      }
+    } else {
+      if (dir === 'ver' && coords.row + ship.length < 16 && this.isVacantV(coords, ship)) {
+        return true;
+      }
     }
+    return false;
+  }
+
+  isVacantH(coords, ship) {
+    if (!this.state.board[coords.row].slice(coords.col, coords.col + ship.length).some(c => c !== null)) {
+      return true;
+    }
+    return false;
+  }
+
+  isVacantV(coords, ship) {
+    for (let i = 0; i < ship.length; i++) {
+      if (this.state.board[coords.row + i][coords.col]) {
+        return false;
+      }
+    }
+    return true;
   }
   
   render() {
