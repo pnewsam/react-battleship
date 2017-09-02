@@ -1,20 +1,58 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+/*
+Error: Invalid CSS after "...kground-color: ": expected expression (e.g. 1px, bold), was ";"
+        on line 31 of src/styles.scss
 
+26: }
+27: input {
+28:   margin-bottom: 20px;
+29: }
+30: button {
+31:   background-color: ;
+32: }
+33: 
+34: // Utility
+35: .p20 {
+36:   padding: 20px;
 
-.row {
-  display: table;
-}
-
-.cell {
-  border: solid 1px black;
-  background-color: lightgrey;
-  height: 30px;
-  width: 30px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-}
+Backtrace:
+src/styles.scss:31
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:1179:in `expected'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/script/lexer.rb:212:in `expected!'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/script/parser.rb:560:in `assert_expr'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/script/parser.rb:61:in `parse'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:1041:in `sass_script'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:894:in `value!'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:767:in `block in try_declaration'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:1155:in `call'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:1155:in `rethrow'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:780:in `try_declaration'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:710:in `declaration_or_ruleset'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:675:in `block_child'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:664:in `block_contents'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:656:in `block'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:649:in `ruleset'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:674:in `block_child'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:667:in `block_contents'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:126:in `stylesheet'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/scss/parser.rb:42:in `parse'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/engine.rb:403:in `_to_tree'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/vendor/listen/lib/listen/listener.rb:252:in `call'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/vendor/listen/lib/listen/adapter.rb:254:in `call'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/Users/paulnewsam/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sass-4.0.0.alpha.1/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...kground-color: \": expected expression (e.g. 1px, bold), was \";\"\A         on line 31 of src/styles.scss\A \A 26: }\A 27: input {\A 28:   margin-bottom: 20px;\A 29: }\A 30: button {\A 31:   background-color: ;\A 32: }\A 33: \A 34: // Utility\A 35: .p20 {\A 36:   padding: 20px;"; }

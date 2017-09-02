@@ -1,0 +1,78 @@
+// Reset
+@import "styles/normalize";
+@import "styles/reset";
+
+// Variables
+$mirage: #18202B;
+$red: #FF0000;
+
+// Base Styles
+body {
+  background-color: $mirage;
+  color: $red;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 6em;
+  letter-spacing: .15em;
+  line-height: 1.5em;
+  text-align: center;
+}
+h2 {
+  font-size: 2em;
+  letter-spacing: .1em;
+  text-align: center;
+}
+input {
+  margin-bottom: 20px;
+}
+button {
+  background-color: ;
+}
+
+// Utility
+.p20 {
+  padding: 20px;
+}
+.f-center {
+  display: flex;
+  justify-content: center;
+}
+.g-border {
+  border: solid 2px dimgray;  
+}
+
+// Components
+.game {
+  @extend .f-center;
+}
+
+.row {
+  display: table;
+}
+
+.cell {
+  @extend .g-border;
+  height: 30px;
+  width: 30px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.board {
+  @extend .f-center;
+  width: 600px;
+}
+
+.player-console {
+  @extend .p20;
+  @extend .g-border;
+  box-sizing: border-box;
+  width: 360px;
+  height: 544px;
+  .player-console__input {
+    display: block;
+  }
+}
