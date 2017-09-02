@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Board from "./Board";
+import PlayerConsole from "./PlayerConsole";
 import rand from "../scripts/random";
 
 class Game extends Component {
@@ -76,23 +77,21 @@ class Game extends Component {
   }
 
   isPlaceable(coords, ship, dir) {
-    if (dir === 'hor') {
-      if (coords.col + ship.length < 16 && this.isVacantH(coords, ship)) {
-        return true;
-      }
-    } else {
-      if (dir === 'ver' && coords.row + ship.length < 16 && this.isVacantV(coords, ship)) {
-        return true;
-      }
+    switch(dir) {
+      case 'hor':
+        if (coords.col + ship.length < 16 &&
+          !this.state.board[coords.row].slice(coords.col, coords.col + ship.length).some(c => c !== null)) {
+          return true;
+        } else {
+          return false;
+        }
+      case 'ver':
+        if (dir === 'ver' && coords.row + ship.length < 16 && this.isVacantV(coords, ship)) {
+          return true;
+        } else {
+          return false;
+        }
     }
-    return false;
-  }
-
-  isVacantH(coords, ship) {
-    if (!this.state.board[coords.row].slice(coords.col, coords.col + ship.length).some(c => c !== null)) {
-      return true;
-    }
-    return false;
   }
 
   isVacantV(coords, ship) {
@@ -106,7 +105,13 @@ class Game extends Component {
   
   render() {
     return(
-      <Board board={this.state.board}/>
+      <div className="wrapper">
+        <h1>BATTLESHIPS</h1>
+        <div className="game">
+          <Board board={this.state.board}/>
+          <PlayerConsole />
+        </div>
+      </div>
     )
   }
 }
